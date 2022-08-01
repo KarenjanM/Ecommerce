@@ -1,0 +1,13 @@
+{%extends "new_auth/base.html"%}
+{%block content%}
+{%load crispy_forms_tags%}
+<div class="container py-5">
+    <h1>Register</h1>
+    <form action="." method="POST">
+        {%csrf_token%}
+        {{form|crispy}}
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <p>If you already have an account, <a href="{%url 'login'%}">login</a> instead.</p>
+</div>
+{%endblock%}

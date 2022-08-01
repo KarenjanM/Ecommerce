@@ -1,0 +1,23 @@
+{%extends "base/main.html"%}
+{%load static%}
+{%block content%}
+<div class="row">
+    {%for product in products%}
+    <div class="col-lg-4">
+        {% if product.image %}
+        <img class="thumbnail" src="{{product.image_url}}" alt="">
+        {%else%}
+        <img class="thumbnail" src="https://via.placeholder.com/600x480.png" alt="">
+        {%endif%}
+        <div class="box-element product">
+            <h6><strong>{{product.name}}</strong></h6>
+            <hr>
+            <button data-action="add" data-price="{{product.price}}" data-product="{{product.id}}" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+            <a class="btn btn-outline-success" href="product/{{product.id}}">View</a>
+            <h4 style="display: inline-block; float: right;">{{product.price|floatformat:2}}$</h4>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+{%endblock%}

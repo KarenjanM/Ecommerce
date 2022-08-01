@@ -1,0 +1,25 @@
+{%extends "base/main.html"%}
+{%block content%}
+<div class="container">
+    <img src="{{product.image_url}}" class="img-fluid" alt="">
+</div>
+<div class="container" >
+    <div class="col-lg-4"  style="display: inline-block">
+        <h1>{{product.name}}</h1>
+        <h1>{{product.price}}$</h1>
+    </div>
+    <div class="col-lg-4"  style="display: inline-block">
+        <button data-action="add" data-price="{{product.price}}" data-product="{{product.id}}"
+                class="btn btn-lg btn-outline-secondary add-btn update-cart">Add to cart</button>
+    </div>
+</div>
+<style>
+    .img-fluid{
+         max-width: 78%;
+         height: auto;
+    }
+    .add-btn{
+        margin-bottom: 60px;
+    }
+</style>
+{%endblock%}
